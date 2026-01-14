@@ -253,7 +253,7 @@ do -- Load items
     Content.BackgroundTransparency = 1.000
     Content.ClipsDescendants = true
     Content.Position = UDim2.new(0, 0, 1, 0)
-    Content.Size = UDim2.new(1, 0, 0, 800)
+    Content.Size = UDim2.new(1, 0, 0, 22)
     Content.Image = "rbxassetid://3570695787"
     Content.ImageColor3 = Color3.fromRGB(21, 22, 23)
     Content.ScaleType = Enum.ScaleType.Slice
