@@ -1399,7 +1399,24 @@ local library library = {
         }).handle(options)
 
         local main = new("Main") main.Parent = ScreenGui
-        main.Size = options.size or UDim2.fromOffset(300, 22)
+       
+        if options.size then
+             -- width only (title bar)
+            main.Size = UDim2.new(
+                0, options.size.X.Offset,
+                0, 22
+            )
+
+            -- resize content (everything below title bar)
+            local content = main:FindFirstChild("Content")
+            if content then
+                content.Size = UDim2.new(
+                    1, 0,
+                    0, math.max(0, options.size.Y.Offset - 22)
+                )
+            end
+        end
+
         local content = main:FindFirstChild("Content")
         content.Size = UDim2.new(1, 0, 0, options.size.Y.Offset - 22)
         local tabs = main:FindFirstChild("Tabs")
